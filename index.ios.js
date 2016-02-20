@@ -3,60 +3,147 @@
  * https://github.com/facebook/react-native
  */
 'use strict';
-import React, {
+
+var React = require('react-native');
+var {
   AppRegistry,
-  Component,
-  Dimensions,
   StyleSheet,
   Text,
-  TouchableHighlight,
-  View
-} from 'react-native';
+  View,
+  Image,
+  TabBarIOS,
+  NavigatorIOS,
+  TouchableOpacity,
+} = React;
 
-import Camera from 'react-native-camera';
+var Message = require('./app/message');
+var Contact = require('./app/contact');
+var Checkin = require('./app/checkin')
+var Me = require('./app/me');
 
-class Ledoutong extends Component {
-  render() {
+var Icon = require('react-native-vector-icons/Ionicons');
+
+var Ledoutong = React.createClass({
+  getInitialState: function() {
+    return {
+      selectedTab: 'message',
+    };
+  },
+
+  render: function() {
     return (
-      <View style={styles.container}>
-        <Camera
-          ref={(cam) => {
-            this.camera = cam;
-          }}
-          style={styles.preview}
-          aspect={Camera.constants.Aspect.stretch}>
-          <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CAPTURE]</Text>
-        </Camera>
-      </View>
+      <TabBarIOS
+        tintColor="#38AEF6"
+        barTintColor="#F9F9F9">
+
+        <Icon.TabBarItem
+          title="Message"
+          iconName="ios-home-outline"
+          selectedIconName="ios-home"
+          selected={this.state.selectedTab === 'message'}
+          onPress={() => {
+            this.setState({
+              selectedTab: 'message',
+            });
+          }}>
+          <NavigatorIOS
+            barTintColor='#5F97F6'
+            titleTextColor='#fff'
+            style={styles.navigator}
+            initialRoute={{
+              component: Message,
+              passProps: {},
+              title: 'Message',
+            }}/>
+        </Icon.TabBarItem>
+        <Icon.TabBarItem
+          title="Contacts"
+          iconName="ios-person-outline"
+          selectedIconName="ios-person"
+          selected={this.state.selectedTab === 'contacts'}
+          onPress={() => {
+            this.setState({
+              selectedTab: 'contacts',
+            });
+          }}>
+          <NavigatorIOS
+            barTintColor='#5F97F6'
+            titleTextColor='#fff'
+            style={styles.navigator}
+            initialRoute={{
+              component: Contact,
+              passProps: {},
+              title: 'Contacts',
+            }}/>
+        </Icon.TabBarItem>
+        <Icon.TabBarItem
+          title="Checkin"
+          iconName="ios-navigate-outline"
+          selectedIconName="ios-navigate"
+          selected={this.state.selectedTab === 'checkin'}
+          onPress={() => {
+            this.setState({
+              selectedTab: 'checkin',
+            });
+          }}>
+          <NavigatorIOS
+            barTintColor='#5F97F6'
+            titleTextColor='#fff'
+            style={styles.navigator}
+            initialRoute={{
+              component: Checkin,
+              passProps: {},
+              title: 'Checkin',
+            }}/>
+        </Icon.TabBarItem>
+        <Icon.TabBarItem
+          title="Me"
+          iconName="ios-gear-outline"
+          selectedIconName="ios-gear-outline"
+          selected={this.state.selectedTab === 'me'}
+          onPress={() => {
+            this.setState({
+              selectedTab: 'me',
+            });
+          }}>
+          <NavigatorIOS
+            barTintColor='#5F97F6'
+            titleTextColor='#fff'
+            style={styles.navigator}
+            initialRoute={{
+              component: Me,
+              passProps: {},
+              title: 'Me',
+            }}/>
+        </Icon.TabBarItem>
+      </TabBarIOS>
     );
-  }
-
-  takePicture() {
-    this.camera.capture()
-      .then((data) => console.log(data))
-      .catch(err => console.error(err));
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-  preview: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    height: Dimensions.get('window').height,
-    width: Dimensions.get('window').width
-  },
-  capture: {
-    flex: 0,
-    backgroundColor: '#fff',
-    borderRadius: 5,
-    color: '#000',
-    padding: 10,
-    margin: 40
   }
 });
 
+var styles = StyleSheet.create({
+  navigator: {
+    flex: 1,
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  tabContent: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  tabText: {
+    color: 'white',
+  },
+  button: {
+    marginTop: 20,
+    padding: 8,
+    backgroundColor: '#e8e8e8',
+    borderRadius: 4,
+  },
+});
 AppRegistry.registerComponent('Ledoutong', () => Ledoutong);
