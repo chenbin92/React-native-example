@@ -6,6 +6,7 @@ Date：2016-02-21
 
 - [浅谈前端移动开发 (Ionic 与 React Native)](https://github.com/chenbin92/React-native-example/issues/2)
 - [React Native 新手入门篇](https://github.com/chenbin92/React-native-example/issues/3)
+- [添加设置 iOS App Icon 和 Launch Image](https://github.com/chenbin92/React-native-example/issues/5)
 - [React Native 控件之 Navigator 组件详解以及实例](https://github.com/chenbin92/React-native-example/issues/4)
 - 持续更新中...
 
