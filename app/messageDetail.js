@@ -6,8 +6,6 @@
 
 var React = require('react-native');
 
-var MessageDetail = require('./messageDetail');
-
 var {
   StyleSheet,
   Text,
@@ -16,26 +14,16 @@ var {
   TouchableOpacity,
 } = React;
 
-var SendMessage = React.createClass({
+var MessageDetail = React.createClass({
   render: function(){
     return (
       <View style={styles.tabContent}>
         <TouchableOpacity onPress={this._navigateToSubview}>
-          <View style={styles.button}><Text style={styles.buttonText}>Message content</Text></View>
+          <View style={styles.button}><Text style={styles.buttonText}>Message detail content</Text></View>
         </TouchableOpacity>
       </View>
     );
   },
-  _navigateToSubview: function() {
-    this.props.navigator.push({
-      component: MessageDetail,
-      title: "Detail",
-      rightButtonTitle: 'New',
-      onRightButtonPress: function(){
-        alert('On right button press!');
-      }
-    })
-  }
 });
 
 var styles = StyleSheet.create({
@@ -54,5 +42,4 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-module.exports = SendMessage;
+module.exports = MessageDetail;
