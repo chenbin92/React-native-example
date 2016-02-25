@@ -42,5 +42,4 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
 module.exports = MessageDetail;
