@@ -41,7 +41,8 @@ var Login = React.createClass({
 
         <TextInput
           style={styles.passowrdInput}
-          placeholder='Passowrd' />
+          placeholder='Passowrd'
+          password={true} />
 
         <View style={styles.loginButton}>
           <Text style={{color: '#fff'}} onPress={this._login}>Login</Text>
