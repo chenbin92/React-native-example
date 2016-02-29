@@ -9,6 +9,7 @@ Date：2016-02-21
 - [添加设置 iOS App Icon 和 Launch Image](https://github.com/chenbin92/React-native-example/issues/5)
 - [React Native 控件之 Navigator 组件详解以及实例](https://github.com/chenbin92/React-native-example/issues/4)
 - [React Native 之 LandingPage 示例演示 ](https://github.com/chenbin92/React-native-example/issues/8)
+- [React Naitve之 Flexbox 布局](https://github.com/chenbin92/React-native-example/issues/9)
 - 持续更新中...
 
 ## 二： 环境搭建
