@@ -12,12 +12,13 @@ var {
 } = React;
 
 var LandingGuide = require('./app/component/landingGuide');
+var TabBar = require('./app/component/tabBar');
 
 var Ledoutong = React.createClass({
 
   getInitialState: function () {
     return {
-        showLandingPage: true,
+        showLandingPage: false,
     };
   },
 
@@ -27,7 +28,9 @@ var Ledoutong = React.createClass({
         <LandingGuide />
       );
     } else {
-      return null
+      return (
+        <TabBar />
+      )
     }
   }
 });
