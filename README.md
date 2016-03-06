@@ -10,6 +10,12 @@ Date：2016-02-21
 - [React Native 控件之 Navigator 组件详解以及实例](https://github.com/chenbin92/React-native-example/issues/4)
 - [React Native 之 LandingPage 示例演示 ](https://github.com/chenbin92/React-native-example/issues/8)
 - [React Naitve之 Flexbox 布局](https://github.com/chenbin92/React-native-example/issues/9)
+-  React Native 之 Movies 示例能学到什么
+    1. [使用 ListView 组件实现类似iPhone通讯录效果](https://github.com/chenbin92/React-native-example/issues/11)
+    2. Fetch API 的使用(待续)
+    3. React 生命周期(待续)
+    4. 搜索功能(待续)
+    5. 下拉刷新功能(待续)
 - 持续更新中...
 
 ## 二： 环境搭建
